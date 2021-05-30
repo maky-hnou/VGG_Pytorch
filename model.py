@@ -8,7 +8,7 @@ class VGG(nn.Module):
         self.in_channels = in_channels
         self.num_classes = num_classes
         # select convolutional layer configuration for the VGG net
-        self.covolutional_layers = self.make_conv_layers()
+        self.convolutional_layers = self.make_conv_layers()
         self.fully_connected = nn.Sequential(
             nn.Linear(512*7*7, 4096),
             nn.ReLU(),
@@ -19,7 +19,7 @@ class VGG(nn.Module):
             nn.Linear(4096, self.num_classes)
         )
 
-    def make_conv_layers(self):
+    def make_conv_layers(self, ):
         layers = []
         in_channels = self.in_channels
         for op in self.config:
